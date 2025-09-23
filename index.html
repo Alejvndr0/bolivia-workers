@@ -16,23 +16,30 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-      <header class="navbar">
-        <div class="container nav-container">
-            <!-- Logo -->
-            <div class="logo">
-                <img src="img/Imagen1.jpg" alt="Bolivian Workers Logo" class="logo-img">
-                <h1 class="logo-text">Bolivian Workers</h1>
-            </div>
-
-            <!-- Menu -->
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="#about">Sobre Nosotros</a></li>
-                    <li><a href="#jobs">Oportunidades</a></li>
-                </ul>
-            </nav>
+   <header class="navbar">
+    <div class="container nav-container">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="img/Imagen1.jpg" alt="Bolivian Workers Logo" class="logo-img">
+            <h1 class="logo-text">Bolivian Workers</h1>
         </div>
-    </header>
+
+        <!-- Hamburger Menu Toggle -->
+        <button class="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Menu -->
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#jobs">Oportunidades</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-bg"></div>
@@ -515,6 +522,25 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js">
+        document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+});
+    </script>
+    
 </body>
 </html>
