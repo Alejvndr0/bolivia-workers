@@ -1358,3 +1358,70 @@ p {
 body {
     padding-top: 70px;
 }
+ .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .job-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .job-image {
+            width: 100%;
+            height: 350px;
+            object-fit: contain; /* Muestra la imagen completa */
+            background: #fff;
+            display: block;
+            padding: 10px;
+        }
+
+        .job-content {
+            padding: 1.2rem;
+            text-align: center;
+        }
+
+        .job-content h3 {
+            margin: 0.7rem 0;
+            color: #003366;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .job-location {
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .job-location i {
+            color: #003366;
+            margin-right: 5px;
+        }
+
+
+        .btn-apply {
+            display: inline-block;
+            background: #003366;
+            color: white;
+            text-decoration: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            margin-top: 0.8rem;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-apply:hover {
+            background: #0055aa;
+            transform: scale(1.05);
+        }
